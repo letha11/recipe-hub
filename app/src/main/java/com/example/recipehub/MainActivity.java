@@ -52,15 +52,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent = new Intent(this, RecipeDetail.class);
             startActivity(intent);
         } else if (v.getId() == R.id.newRecipe) {
-            Recipe dummyRecipe = new Recipe(0, 1, "Dummy Recipe", "Dummy Description", "Dummy Ingredients", "Dummy Instructions", 30, new byte[0]);
-
-            if (recipeRepository.addRecipe(dummyRecipe) != -1) {
-                // show toast success
-                Toast.makeText(this, "Recipe added successfully", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(this, "Failed to add Recipe", Toast.LENGTH_SHORT).show();
-            }
-
+//            Recipe dummyRecipe = new Recipe(0, 1, "Dummy Recipe", "Dummy Description", "Dummy Ingredients", "Dummy Instructions", 30, new byte[0]);
+//
+//            if (recipeRepository.addRecipe(dummyRecipe) != -1) {
+//                // show toast success
+//                Toast.makeText(this, "Recipe added successfully", Toast.LENGTH_SHORT).show();
+//            } else {
+//                Toast.makeText(this, "Failed to add Recipe", Toast.LENGTH_SHORT).show();
+//            }
         }
     }
 }
