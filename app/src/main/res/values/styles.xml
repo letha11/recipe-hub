@@ -3,4 +3,8 @@
     <style name="PlaceholderStyle" parent="TextAppearance.AppCompat">
         <item name="android:textSize">14sp</item> <!-- Adjust this value as needed -->
     </style>
+
+    <style name="RoundedSquare">
+        <item name="cornerSize">6%</item>
+    </style>
 </resources>
