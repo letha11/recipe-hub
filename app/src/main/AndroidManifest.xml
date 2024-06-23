@@ -16,6 +16,9 @@
             android:name=".register"
             android:exported="false" />
         <activity
+            android:name=".ActivityAddRecipe"
+            android:exported="false" />
+        <activity
             android:name=".RecipeDetail"
             android:exported="false" />
         <activity
@@ -28,5 +31,11 @@
             </intent-filter>
         </activity>
     </application>
+
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+
 
 </manifest>
