@@ -91,16 +91,21 @@
             android:textColorHint="@color/placeholder_color"
             android:fontFamily="@font/helvetica_neue"/>
 
-        <Button
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/signupButton"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="51dp"
-            android:backgroundTint="@color/white"
-            android:fontFamily="@font/helvetica_neue"
+            android:layout_height="wrap_content"
+            android:minHeight="0dp"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp"
+            android:layout_marginTop="43dp"
             android:text="Sign up"
+            android:textAllCaps="false"
+            android:background="@drawable/button_ripple"
             android:textColor="@color/black"
             android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"/>
     </LinearLayout>
 
 </ScrollView>

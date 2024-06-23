@@ -33,7 +33,7 @@ public class User {
 
     public ContentValues toContentValues() {
         ContentValues values = new ContentValues();
-        values.put("name", username);
+        values.put("username", username);
         values.put("email", email);
         values.put("password", password);
         return values;

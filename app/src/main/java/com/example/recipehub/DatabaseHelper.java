@@ -18,7 +18,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String CREATE_USER_TABLE_QUERY = "CREATE TABLE users ( " +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                "name TEXT UNIQUE, "+
+                "username TEXT UNIQUE, "+
                 "email TEXT UNIQUE, "+
                 "password TEXT )";
 
@@ -33,7 +33,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "image BLOB, "+
                 "FOREIGN KEY(user_id) REFERENCES users(id) )";
 
-        String SEED_USER_TABLE_QUERY = "INSERT INTO users (name, email, password) VALUES ( " +
+        String SEED_USER_TABLE_QUERY = "INSERT INTO users (username, email, password) VALUES ( " +
                 "'dummy', " +
                 "'dummy@gmail.com', " +
                 "'dummy' )";
