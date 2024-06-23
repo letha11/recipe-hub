@@ -2,13 +2,10 @@ package com.example.recipehub;
 
 import static androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_YES;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,7 +14,6 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.example.recipehub.models.Recipe;
 import com.example.recipehub.repository.RecipeRepository;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
@@ -42,15 +38,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         newRecipeBtn = findViewById(R.id.newRecipe);
 
         recipe1.setOnClickListener(this);
-        newRecipeBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, activity_add_recipe.class);
-                startActivity(intent);
-            }
-        });
+        newRecipeBtn.setOnClickListener(this);
     }
-
 
     @Override
     public void onClick(View v) {
@@ -58,6 +47,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent = new Intent(this, RecipeDetail.class);
             startActivity(intent);
         } else if (v.getId() == R.id.newRecipe) {
+            Intent intent = new Intent(MainActivity.this, ActivityAddRecipe.class);
+            startActivity(intent);
 //            Recipe dummyRecipe = new Recipe(0, 1, "Dummy Recipe", "Dummy Description", "Dummy Ingredients", "Dummy Instructions", 30, new byte[0]);
 //
 //            if (recipeRepository.addRecipe(dummyRecipe) != -1) {
