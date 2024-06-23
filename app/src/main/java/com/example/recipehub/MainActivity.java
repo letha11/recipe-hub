@@ -42,7 +42,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         newRecipeBtn = findViewById(R.id.newRecipe);
 
         recipe1.setOnClickListener(this);
-        newRecipeBtn.setOnClickListener(this);
+        newRecipeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, activity_add_recipe.class);
+                startActivity(intent);
+            }
+        });
     }
 
 
