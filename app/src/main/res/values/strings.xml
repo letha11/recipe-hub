@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Recipe Hub</string>
+    <string name="register_text_button"><u>Click Here to register</u></string>
 </resources>
