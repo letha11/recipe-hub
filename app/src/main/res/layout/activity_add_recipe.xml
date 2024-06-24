@@ -24,13 +24,13 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/greetTextAdd"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="50"
                 android:fontFamily="@font/helvetica_neue"
-                android:text="hello, Ibka"
-                android:textSize="16sp"
+                android:text="What recipe would you like to share?"
+                android:textAlignment="center"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -50,7 +50,15 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxHeight="200dp"
+                android:contentDescription="Recipe preview" />
+
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/uploadImage"
                 app:strokeWidth="1dp"
                 app:cornerRadius="0dp"
                 app:strokeColor="@color/white"
@@ -153,13 +161,36 @@
                 android:textColorHint="@color/placeholder_color"
                 android:fontFamily="@font/helvetica_neue"/>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Preparation Time"
+                android:textSize="16sp"
+                android:fontFamily="@font/helvetica_neue"/>
+
+            <EditText
+                android:id="@+id/prep_time_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="13dp"
+                android:paddingBottom="13dp"
+                android:paddingStart="13dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/rectangle_button"
+                android:hint="Enter Your Preparation Time Here"
+                android:textSize="14sp"
+                android:textColorHint="@color/placeholder_color"
+                android:fontFamily="@font/helvetica_neue"/>
+
             <Button
+                android:id="@+id/saveButton"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="52dp"
                 android:backgroundTint="@color/white"
                 android:fontFamily="@font/helvetica_neue"
-                android:text="Save"
+                android:text="Share"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold" />
