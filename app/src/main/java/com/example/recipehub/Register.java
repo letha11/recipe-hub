@@ -54,8 +54,10 @@ public class Register extends AppCompatActivity {
                 User user = new User(0, usernameText, emailText, passwordText);
 
                 if (userRepository.addUser(user) != -1) {
+                    User createdUser = userRepository.getUserByUsername(usernameText);
                     // save user data to shared preferences
                     AppPreferences.setUserName(this, usernameText);
+                    AppPreferences.setId(this, createdUser.getId());
 
                     Toast.makeText(this, "Register Successful, Welcome " + usernameText, Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(this, MainActivity.class);
@@ -65,7 +67,6 @@ public class Register extends AppCompatActivity {
                     Toast.makeText(this, "Register failed, try again with different username", Toast.LENGTH_SHORT).show();
                 }
             } catch (Exception e) {
-                e.printStackTrace();
                 Toast.makeText(this, "Register failed, try again with different username", Toast.LENGTH_SHORT).show();
             }
         });

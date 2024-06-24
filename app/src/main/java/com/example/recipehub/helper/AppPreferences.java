@@ -31,4 +31,16 @@ public class AppPreferences {
         mPrefsEditor.putString("username", value);
         mPrefsEditor.apply();
     }
+
+    public static void setId(Context ctx, int value) {
+        mPrefs = ctx.getSharedPreferences("myAppPrefs", Context.MODE_PRIVATE);
+        mPrefsEditor = mPrefs.edit();
+        mPrefsEditor.putInt("id", value);
+        mPrefsEditor.apply();
+    }
+
+    public static int getId(Context ctx) {
+        mPrefs = ctx.getSharedPreferences("myAppPrefs", Context.MODE_PRIVATE);
+        return mPrefs.getInt("id", 0);
+    }
 }

@@ -4,20 +4,29 @@ import static androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_YES;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.PickVisualMediaRequest;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.recipehub.helper.AppPreferences;
 import com.example.recipehub.repository.RecipeRepository;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     RecipeRepository recipeRepository;
+
+    TextView greetText;
     LinearLayout recipe1, newRecipeBtn;
 
     @Override
@@ -36,6 +45,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         recipeRepository = new RecipeRepository(dbHelper.getWritableDatabase());
         recipe1 = findViewById(R.id.recipe1);
         newRecipeBtn = findViewById(R.id.newRecipe);
+        greetText = findViewById(R.id.greetText);
+
+        greetText.setText("hello, " + AppPreferences.getUserName(this));
 
         recipe1.setOnClickListener(this);
         newRecipeBtn.setOnClickListener(this);

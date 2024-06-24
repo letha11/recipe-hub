@@ -60,7 +60,9 @@ public class HalamanLogin extends AppCompatActivity {
                 User user = userRepository.getUserByUsername(usernameText);
 
                 if (user.getPassword().equals(passwordText)) {
-                    AppPreferences.setUserName(this, usernameText);
+                    AppPreferences.setId(this, user.getId());
+                    AppPreferences.setUserName(this, user.getUsername());
+
                     Toast.makeText(this, "Login Successful, Welcome " + usernameText, Toast.LENGTH_SHORT).show();
 
                     Intent intent = new Intent(this, MainActivity.class);
