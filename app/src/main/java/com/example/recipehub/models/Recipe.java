@@ -1,6 +1,8 @@
 package com.example.recipehub.models;
 
 import android.content.ContentValues;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 
 public class Recipe {
     private int id;
@@ -24,11 +26,14 @@ public class Recipe {
         this.image = image;
     }
 
-    public Recipe(int id, int userId, String title, String description, String ingredients, String instructoins, String prepTime, byte[] image, User user) {
+    public Recipe(int id, int userId, String title, String description, String ingredients, String instructions, String prepTime, byte[] image, User user) {
         this.id = id;
         this.userId = userId;
         this.title = title;
         this.description = description;
+        this.ingredients = ingredients;
+        this.instructions = instructions;
+        this.prepTime = Integer.parseInt(prepTime);
         this.image = image;
         this.user = user;
     }
@@ -61,8 +66,8 @@ public class Recipe {
         return prepTime;
     }
 
-    public byte[] getImage() {
-        return image;
+    public Bitmap getImage() {
+        return BitmapFactory.decodeByteArray(image, 0, image.length);
     }
 
     public User getUser() {

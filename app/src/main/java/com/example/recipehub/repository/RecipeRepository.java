@@ -2,6 +2,7 @@ package com.example.recipehub.repository;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import com.example.recipehub.models.Recipe;
 import com.example.recipehub.models.User;
@@ -83,21 +84,21 @@ public class RecipeRepository {
 
     private Recipe extractRecipeFromCursor(Cursor cursor) {
         User user = new User(
-                cursor.getInt(cursor.getColumnIndex("users.id")),
-                cursor.getString(cursor.getColumnIndex("username")),
-                cursor.getString(cursor.getColumnIndex("email")),
-                cursor.getString(cursor.getColumnIndex("password"))
+                cursor.getInt(8),
+                cursor.getString(9),
+                cursor.getString(10),
+                cursor.getString(11)
         );
 
         Recipe recipe = new Recipe(
-                cursor.getInt(cursor.getColumnIndex("id")),
-                cursor.getInt(cursor.getColumnIndex("user_id")),
-                cursor.getString(cursor.getColumnIndex("title")),
-                cursor.getString(cursor.getColumnIndex("description")),
-                cursor.getString(cursor.getColumnIndex("ingredients")),
-                cursor.getString(cursor.getColumnIndex("instructoins")),
-                cursor.getString(cursor.getColumnIndex("prep_time")),
-                cursor.getBlob(cursor.getColumnIndex("image")),
+                cursor.getInt(0),
+                cursor.getInt(1),
+                cursor.getString(2),
+                cursor.getString(3),
+                cursor.getString(4),
+                cursor.getString(5),
+                cursor.getString(6),
+                cursor.getBlob(7),
                 user
         );
 

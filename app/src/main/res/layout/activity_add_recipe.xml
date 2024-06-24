@@ -50,12 +50,13 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:maxHeight="200dp"
-                android:contentDescription="Recipe preview" />
+                android:layout_marginTop="33dp"
+                android:adjustViewBounds="true"
+                app:shapeAppearanceOverlay="@style/RoundedSquare" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/uploadImage"

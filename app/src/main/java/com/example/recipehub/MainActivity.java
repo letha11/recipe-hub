@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         if (v.getId() == R.id.recipe1) {
             Intent intent = new Intent(this, RecipeDetail.class);
+            intent.putExtra("recipeId", 2);
             startActivity(intent);
         } else if (v.getId() == R.id.newRecipe) {
             Intent intent = new Intent(MainActivity.this, ActivityAddRecipe.class);
