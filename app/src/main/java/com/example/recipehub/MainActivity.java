@@ -41,8 +41,7 @@ import java.util.Arrays;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     RecipeRepository recipeRepository;
 
-    TextView greetText;
-    LinearLayout newRecipeBtn;
+    TextView greetText, newRecipeBtn, logoutBtn;
     TextInputEditText searchInput;
 
     RecyclerView recipeList;
@@ -82,6 +81,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         newRecipeBtn = findViewById(R.id.newRecipe);
         newRecipeBtn.setOnClickListener(this);
 
+        logoutBtn = findViewById(R.id.logoutBtn);
+        logoutBtn.setOnClickListener(this);
+
         searchInput = findViewById(R.id.searchInput);
         searchInput.addTextChangedListener(new TextWatcher() {
             @Override
@@ -112,6 +114,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (v.getId() == R.id.newRecipe) {
             Intent intent = new Intent(MainActivity.this, ActivityAddRecipe.class);
             startActivity(intent);
+        } else if (v.getId() == R.id.logoutBtn) {
+            AppPreferences.setUserLoggedIn(this, false);
+            Intent intent = new Intent(MainActivity.this, HalamanLogin.class);
+            startActivity(intent);
+            finish();
         }
     }
 }
