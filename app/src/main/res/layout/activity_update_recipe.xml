@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:scrollbars="none"
-    tools:context=".ActivityAddRecipe">
+    tools:context=".UpdateRecipe">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,7 +28,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="50"
                 android:fontFamily="@font/helvetica_neue"
-                android:text="What recipe would you like to share?"
+                android:text="Edit Recipe"
                 android:textAlignment="center"
                 android:textSize="18sp"
                 android:textStyle="bold"
@@ -57,22 +57,6 @@
                 android:layout_marginTop="33dp"
                 android:adjustViewBounds="true"
                 app:shapeAppearanceOverlay="@style/RoundedSquare" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/uploadImage"
-                app:strokeWidth="1dp"
-                app:cornerRadius="0dp"
-                app:strokeColor="@color/white"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="23dp"
-                android:paddingBottom="10dp"
-                android:backgroundTint="#00FFFFFF"
-                android:drawableTop="@drawable/ic_upload"
-                android:text="Upload Image"
-                android:textSize="14sp"
-                android:textColor="@color/placeholder_color"
-                android:fontFamily="@font/helvetica_neue"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -192,7 +176,7 @@
                 android:layout_marginTop="52dp"
                 android:backgroundTint="@color/white"
                 android:fontFamily="@font/helvetica_neue"
-                android:text="Share"
+                android:text="Save"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -201,5 +185,4 @@
 
 
     </LinearLayout>
-
 </ScrollView>
