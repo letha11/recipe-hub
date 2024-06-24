@@ -62,6 +62,27 @@ public class RecipeRepository {
         }
     }
 
+    public Recipe[] searchRecipeByTitle(String title) {
+        Cursor cursor = db.rawQuery(
+                "SELECT recipes.*, users.* FROM recipes " +
+                        "INNER JOIN users ON recipes.user_id = users.id " +
+                        "WHERE recipes.title LIKE ?",
+                new String[]{"%" + title + "%"}
+        );
+
+        Recipe[] recipes = new Recipe[cursor.getCount()];
+
+        int i = 0;
+        while (cursor.moveToNext()) {
+            Recipe recipe = extractRecipeFromCursor(cursor);
+
+            recipes[i] = recipe;
+            i++;
+        }
+
+        return recipes;
+    }
+
     public Recipe[] getAllRecipeWithUser() {
         Cursor cursor = db.rawQuery(
                 "SELECT recipes.*, users.* FROM recipes " +
